@@ -1,7 +1,15 @@
 import React, { FunctionComponent } from "react";
 import MenuItem from "./MenuItem";
+import { useLocation } from "react-router-dom";
 
-export interface MenuBarsProps {}
+export interface MenuBarsProps {
+  menuItems: Array<{
+    name: string;
+    key: string;
+    color: string;
+    link: string;
+  }>;
+}
 
 const menuStyle = {
   alignItems: "center",
@@ -9,51 +17,17 @@ const menuStyle = {
   width: "150px"
 };
 
-// #3B27BA
-// #E847AE
-// #13CA91
-// #FF9472
+const MenuBars: FunctionComponent<MenuBarsProps> = ({ menuItems }) => {
+  let location = useLocation();
 
-const menuItems = [
-  {
-    itemText: "About Me",
-    key: "aboutme",
-    color: "#3B27BA",
-    link: "http://www.google.com"
-  },
-  {
-    itemText: "Achievements",
-    key: "mywork",
-    color: "#E847AE",
-    link: "http://www.google.com"
-  },
-  {
-    itemText: "Thoughts",
-    key: "blog",
-    color: "#13CA91",
-    link: "http://www.google.com"
-  },
-  {
-    itemText: "Contact",
-    key: "contact",
-    color: "#FF9472",
-    link: "http://www.google.com"
-  },
-  {
-    itemText: "Github",
-    key: "git",
-    color: "black",
-    link: "http://www.github.com"
-  }
-];
-
-const MenuBars: FunctionComponent<MenuBarsProps> = () => {
   return (
     <div style={menuStyle}>
       {menuItems.map(item => (
-        <div>
-          <MenuItem key={item.key} {...item} />
-        </div>
+        <MenuItem
+          key={item.key}
+          isActive={location.pathname === item.link}
+          {...item}
+        />
       ))}
     </div>
   );

@@ -1,43 +1,35 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 import Self from "./self-portrait.png";
+import ContentContainer from "../components/ContentContainer";
 
-export interface HomeProps {}
-
-const StyledDiv = styled.div`
-  background-color: white;
-  width: 500px;
-  text-align: center;
-  padding: 25px;
-  border: 2px solid #3b27ba;
-  border-radius: 0.1em;
-  min-height: 600px;
-  margin-left: 5px;
-  margin-right: 155px;
-  transition: all 0.2s;
-  &:hover {
-    box-shadow: 0 0 10px #3b27ba;
-  }
-`;
+export interface HomeProps {
+  color: string;
+}
 
 const StyledHeader = styled.h1`
   margin-bottom: 20px;
-  color: #3b27ba;
+  color: ${props => props.color};
 `;
 
-const Home: FunctionComponent<HomeProps> = () => {
+const StyledSubheader = styled.p`
+  color: ${props => props.color};
+`;
+
+const Home: FunctionComponent<HomeProps> = ({ color }) => {
+  color = "#3b27ba";
   return (
-    <StyledDiv>
-      <StyledHeader>Joshua Young</StyledHeader>
-      <div>
-        <img src={Self} alt="Joshua Young" />
+    <ContentContainer color={color}>
+      <StyledHeader color={color}>Joshua Young</StyledHeader>
+      <div style={{ marginBottom: "20px" }}>
+        <img src={Self} alt="Joshua Young" height="218px" width="218px" />
         <p>
           Full Stack Software Engineer
           <br />
           Employed at Zeren, Chapman Tripp's innovation team.
         </p>
         <br />
-        <p style={{ color: "#3b27ba" }}>Technical</p>
+        <StyledSubheader color={color}>Technical</StyledSubheader>
         <p>
           JavaScript/TypeScript + React + Redux
           <br />
@@ -46,14 +38,14 @@ const Home: FunctionComponent<HomeProps> = () => {
           DevOps + CI/CD Azure Pipelines
         </p>
         <br />
-        <p style={{ color: "#3b27ba" }}>Relational</p>
+        <StyledSubheader color={color}>Relational</StyledSubheader>
         Worked directly with large business clients <br />
         (Live Demo, Training, Support, Solution Design)
         <br />
         Outgoing, Strong Communicator
         <br />
       </div>
-    </StyledDiv>
+    </ContentContainer>
   );
 };
 
