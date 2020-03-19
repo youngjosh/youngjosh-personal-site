@@ -11,7 +11,7 @@ export interface ThoughtsProps {
 
 const FollowingContainer = styled(ContentContainer)`
   margin-top: 20px;
-  width: 600px;
+  width: 500px;
 `;
 
 const Thoughts: FunctionComponent<ThoughtsProps> = ({ color }) => {

@@ -12,8 +12,6 @@ const StyledDiv = styled.div`
   padding: 25px;
   border: 1.5px solid ${props => props.color};
   border-radius: 0.1em;
-  margin-left: 5px;
-  margin-right: 155px;
   transition: all 0.2s;
   &:hover {
     box-shadow: 0 3px 10px ${props => props.color};

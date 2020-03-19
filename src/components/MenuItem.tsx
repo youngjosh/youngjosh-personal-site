@@ -18,7 +18,9 @@ const StyledButton = styled(({ isActive, ...rest }) => (
   <DynamicLink {...rest} />
 ))<StyledButtonProps>`
   width: 100%;
-  display: inline-block;
+  min-width: 100px;
+  height: 30px;
+  display: flex;
   padding: 0.35em 1.2em;
   margin: 0 0.3em 0.3em 0;
   border-radius: 0.12em;
@@ -30,6 +32,11 @@ const StyledButton = styled(({ isActive, ...rest }) => (
   transition: all 0.2s;
   font: 400 13.3333px Arial;
   background-color: white;
+
+  @media only screen and (max-width: 849px) {
+    flex: 1 1 auto;
+    max-width: 130px;
+  }
 
   ${props =>
     props.isActive

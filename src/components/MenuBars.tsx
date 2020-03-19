@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+import styled from "styled-components";
 import MenuItem from "./MenuItem";
 import { useLocation } from "react-router-dom";
 
@@ -11,17 +12,26 @@ export interface MenuBarsProps {
   }>;
 }
 
-const menuStyle = {
-  alignItems: "center",
-  justifyContent: "center",
-  width: "150px"
-};
+const Div = styled.div`
+  @media only screen and (min-width: 850px) {
+    width: 150px;
+    position: fixed;
+    margin-left: -150px;
+  }
+  @media only screen and (max-width: 849px) {
+    position: fixed;
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: -34px;
+    width: inherit;
+  }
+`;
 
 const MenuBars: FunctionComponent<MenuBarsProps> = ({ menuItems }) => {
   let location = useLocation();
 
   return (
-    <div style={menuStyle}>
+    <Div>
       {menuItems.map(item => (
         <MenuItem
           key={item.key}
@@ -29,7 +39,7 @@ const MenuBars: FunctionComponent<MenuBarsProps> = ({ menuItems }) => {
           {...item}
         />
       ))}
-    </div>
+    </Div>
   );
 };
 
