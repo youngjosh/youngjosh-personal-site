@@ -12,6 +12,7 @@ const Achievements: FunctionComponent<AchievementsProps> = ({ color }) => {
   return (
     <ContentContainer color={color}>
       <ContentHeader color={color}>Achievements</ContentHeader>
+      <p>Who am I kidding, I don't have any..</p>
     </ContentContainer>
   );
 };

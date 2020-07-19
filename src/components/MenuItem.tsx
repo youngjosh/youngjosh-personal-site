@@ -22,7 +22,6 @@ const StyledButton = styled(({ isActive, ...rest }) => (
   height: 30px;
   display: flex;
   padding: 0.35em 1.2em;
-  margin: 0 0.3em 0.3em 0;
   border-radius: 0.12em;
   box-sizing: border-box;
   text-decoration: none;
@@ -55,6 +54,14 @@ const StyledButton = styled(({ isActive, ...rest }) => (
       }`}
 `;
 
+const ButtonContainer = styled.div`
+  @media only screen and (max-width: 849px) {
+    display: flex;
+    flex: 1 1 auto;
+    max-width: 130px;
+  }
+`;
+
 const MenuItem: FunctionComponent<MenuItemProps> = ({
   name,
   color,
@@ -62,9 +69,11 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
   isActive
 }) => {
   return (
-    <StyledButton to={link} color={color} isActive={isActive}>
-      {name}
-    </StyledButton>
+    <ButtonContainer>
+      <StyledButton to={link} color={color} isActive={isActive}>
+        {name}
+      </StyledButton>
+    </ButtonContainer>
   );
 };
 

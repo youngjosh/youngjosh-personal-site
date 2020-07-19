@@ -24,6 +24,7 @@ const Div = styled.div`
     flex-flow: row wrap;
     margin-top: -34px;
     width: inherit;
+    justify-content: center;
   }
 `;
 

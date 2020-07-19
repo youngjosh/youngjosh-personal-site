@@ -1,35 +1,46 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 import Self from "./self-portrait.png";
-import ContentContainer from "../components/ContentContainer";
+import ContentContainer, {
+  ContentHeader,
+  ContentSubheader
+} from "../components/ContentContainer";
+import WrappedImage from "../components/WrappedImage";
 
 export interface HomeProps {
   color: string;
 }
 
-const StyledHeader = styled.h1`
-  margin-bottom: 20px;
-  color: ${props => props.color};
-`;
+const IMAGE_HEIGHT = 218;
 
-const StyledSubheader = styled.p`
-  color: ${props => props.color};
+const CenterDiv = styled.div`
+  margin: auto;
+  height: ${IMAGE_HEIGHT}px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 `;
 
 const Home: FunctionComponent<HomeProps> = ({ color }) => {
   color = "#3b27ba";
   return (
     <ContentContainer color={color}>
-      <StyledHeader color={color}>Joshua Young</StyledHeader>
+      <ContentHeader color={color}>Joshua Young</ContentHeader>
       <div style={{ marginBottom: "20px" }}>
-        <img src={Self} alt="Joshua Young" height="218px" width="218px" />
+        <CenterDiv>
+          <WrappedImage
+            src={Self}
+            alt="Joshua Young"
+            height={IMAGE_HEIGHT}
+            width={IMAGE_HEIGHT}
+          />
+        </CenterDiv>
         <p>
           Full Stack Software Engineer
           <br />
           Employed at Zeren, Chapman Tripp's innovation team.
         </p>
         <br />
-        <StyledSubheader color={color}>Technical</StyledSubheader>
+        <ContentSubheader color={color}>Technical</ContentSubheader>
         <p>
           JavaScript/TypeScript + React + Redux
           <br />
@@ -38,7 +49,7 @@ const Home: FunctionComponent<HomeProps> = ({ color }) => {
           DevOps + CI/CD Azure Pipelines
         </p>
         <br />
-        <StyledSubheader color={color}>Relational</StyledSubheader>
+        <ContentSubheader color={color}>Relational</ContentSubheader>
         Worked directly with large business clients <br />
         (Live Demo, Training, Support, Solution Design)
         <br />
