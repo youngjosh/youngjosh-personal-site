@@ -20,7 +20,7 @@ const Thoughts: FunctionComponent<ThoughtsProps> = ({ color }) => {
     <div>
       <ContentContainer color={color}>
         <ContentSubheader color={color}>
-          <h2>A place to put my thoughts</h2>
+          A place to put my thoughts
         </ContentSubheader>
         <p>Seriously it's just a blog</p>
       </ContentContainer>

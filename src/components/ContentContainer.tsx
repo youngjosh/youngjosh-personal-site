@@ -6,7 +6,6 @@ export interface ContentContainerProps {
 }
 
 const StyledDiv = styled.div`
-  min-width: 500px;
   background-color: white;
   text-align: center;
   padding: 25px;
@@ -14,7 +13,7 @@ const StyledDiv = styled.div`
   border-radius: 0.1em;
   transition: all 0.2s;
   &:hover {
-    box-shadow: 0 3px 10px ${props => props.color};
+    box-shadow: 3px 3px 12px ${props => props.color};
   }
 `;
 
