@@ -33,12 +33,8 @@ const MenuBars: FunctionComponent<MenuBarsProps> = ({ menuItems }) => {
 
   return (
     <Div>
-      {menuItems.map(item => (
-        <MenuItem
-          key={item.key}
-          isActive={location.pathname === item.link}
-          {...item}
-        />
+      {menuItems.map((item) => (
+        <MenuItem isActive={location.pathname === item.link} {...item} />
       ))}
     </Div>
   );
