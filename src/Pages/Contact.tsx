@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import ContentContainer, {
-  ContentHeader
+  ContentHeader,
 } from "../components/ContentContainer";
 
 export interface ContactProps {
@@ -12,7 +12,7 @@ const Contact: FunctionComponent<ContactProps> = ({ color }) => {
   return (
     <ContentContainer color={color}>
       <ContentHeader color={color}>Contact Me</ContentHeader>
-      <p>I would link to some social media but let's be real you don't care</p>
+      <p>Contact me at joshua@youngjosh.dev</p>
     </ContentContainer>
   );
 };

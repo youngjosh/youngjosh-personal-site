@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 import ContentContainer, {
   ContentHeader,
-  ContentSubheader
+  ContentSubheader,
 } from "../components/ContentContainer";
 
 export interface ThoughtsProps {
@@ -11,7 +11,6 @@ export interface ThoughtsProps {
 
 const FollowingContainer = styled(ContentContainer)`
   margin-top: 20px;
-  width: 500px;
 `;
 
 const Thoughts: FunctionComponent<ThoughtsProps> = ({ color }) => {

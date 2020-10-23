@@ -5,6 +5,7 @@ export interface AppContainerProps {}
 
 const BodyDiv = styled.div`
   display: flex;
+  width: ${(props) => props.theme.contentWidth}px;
   margin-right: auto;
   margin-left: auto;
 `;

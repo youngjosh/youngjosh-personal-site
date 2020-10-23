@@ -6,29 +6,30 @@ export interface ContentContainerProps {
 }
 
 const StyledDiv = styled.div`
+  width: 100%;
   background-color: white;
   text-align: center;
   padding: 25px;
-  border: 1.5px solid ${props => props.color};
+  border: 1.5px solid ${(props) => props.color};
   border-radius: 0.1em;
   transition: all 0.2s;
   &:hover {
-    box-shadow: 3px 3px 12px ${props => props.color};
+    box-shadow: 3px 3px 12px ${(props) => props.color};
   }
 `;
 
 export const ContentHeader = styled.h1`
   margin-bottom: 20px;
   margin-top: 20px;
-  color: ${props => props.color};
+  color: ${(props) => props.color};
 `;
 
 export const ContentSubheader = styled.p`
-  color: ${props => props.color};
+  color: ${(props) => props.color};
 `;
 
 export const ContentLink = styled.a`
-  color: ${props => props.color};
+  color: ${(props) => props.color};
 `;
 
 const ContentContainer: FunctionComponent<ContentContainerProps> = ({
