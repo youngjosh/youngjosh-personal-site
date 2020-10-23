@@ -3,9 +3,16 @@ import styled from "styled-components";
 import Self from "./self-portrait.png";
 import ContentContainer, {
   ContentHeader,
-  ContentSubheader
+  ContentSubheader,
 } from "../components/ContentContainer";
 import WrappedImage from "../components/WrappedImage";
+
+export const routing = {
+  name: "About Me",
+  key: "aboutme",
+  color: "#3B27BA",
+  link: "/",
+};
 
 export interface HomeProps {
   color: string;
@@ -46,7 +53,7 @@ const Home: FunctionComponent<HomeProps> = ({ color }) => {
           <br />
           Java + Springboot
           <br />
-          DevOps + CI/CD Azure Pipelines
+          Azure Pipelines + Kubernetes + Terraform
         </p>
         <br />
         <ContentSubheader color={color}>Relational</ContentSubheader>

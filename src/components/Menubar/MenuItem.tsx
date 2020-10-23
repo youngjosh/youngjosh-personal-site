@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components";
-import DynamicLink, { DynamicLinkProps } from "./DynamicLink";
+import DynamicLink, { DynamicLinkProps } from "../DynamicLink";
 
 export interface MenuItemProps {
   name: string;
@@ -32,12 +32,13 @@ const StyledButton = styled(({ isActive, ...rest }) => (
   font: 400 13.3333px Arial;
   background-color: white;
 
-  @media only screen and (max-width: 849px) {
+  @media only screen and (max-width: ${(props) =>
+      props.theme.transitionNav}px) {
     flex: 1 1 auto;
-    max-width: 130px;
+    max-width: 150px;
   }
 
-  ${props =>
+  ${(props) =>
     props.isActive
       ? `
       color: #ffffff;
@@ -55,7 +56,8 @@ const StyledButton = styled(({ isActive, ...rest }) => (
 `;
 
 const ButtonContainer = styled.div`
-  @media only screen and (max-width: 849px) {
+  @media only screen and (max-width: ${(props) =>
+      props.theme.transitionNav}px) {
     display: flex;
     flex: 1 1 auto;
     max-width: 130px;
@@ -66,7 +68,7 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
   name,
   color,
   link,
-  isActive
+  isActive,
 }) => {
   return (
     <ButtonContainer>

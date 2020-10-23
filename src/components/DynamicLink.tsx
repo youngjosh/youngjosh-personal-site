@@ -5,7 +5,7 @@ export interface DynamicLinkProps extends LinkProps {
   to: string;
 }
 
-const DynamicLink: React.FunctionComponent<DynamicLinkProps> = props => {
+const DynamicLink: React.FunctionComponent<DynamicLinkProps> = (props) => {
   const { to, children } = props;
 
   return /^https?:\/\//.test(to) ? (
