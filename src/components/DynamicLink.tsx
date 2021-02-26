@@ -13,7 +13,7 @@ const DynamicLink: React.FunctionComponent<DynamicLinkProps> = props => {
       {children}
     </a>
   ) : (
-    <Link to={to} {...props}>
+    <Link {...props} to={to}>
       {children}
     </Link>
   );
